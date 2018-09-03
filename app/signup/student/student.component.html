@@ -1,0 +1,72 @@
+<!-- <a [routerLink] = "['/teacher']">teacher</a>
+<a [routerLink] = "['/student']">student</a>
+<router-outlet></router-outlet> -->
+
+<body >
+    <form [formGroup]="StudentForm" (ngSubmit)="onSubmit()" class="margin">
+        <label>
+          First Name:
+          <input type="text" formControlName="firstName" required>
+        </label>
+        
+        <label>
+          Last Name:
+          <input type="text" formControlName="lastName">
+        </label>
+        
+        <div formGroupName="address">
+          <h3>Address</h3>          
+          <label>
+            Street:
+            <input type="text" formControlName="street">
+          </label>
+          <label>
+            City:
+            <input type="text" formControlName="city">
+          </label>
+          
+          <label>
+            State:
+            <input type="text" formControlName="State">
+          </label>
+          
+          <label>
+            Zip Code:
+            <input type="text" formControlName="zipCode">
+          </label>
+        </div>
+        
+        <div formArrayName="phoneNo">
+          <h3>Contact</h3> <button (click)="addPhoneNo()">Add Phone Number</button>
+      
+          <div *ngFor="let address of phoneNo.controls; let i=index">
+            <!-- The repeated alias template -->
+            <label>
+              Contact:<br>
+              <input type="text" [formControlName]="i">
+            </label>
+          </div>
+        </div>
+      
+        <button  type="submit" [disabled]="!StudentForm.valid">Submit</button>
+      </form>
+      
+      <hr>
+      
+      
+      <p>
+        Form Value: {{ StudentForm.value | json }}
+      </p>
+      
+      
+      <p>
+        Form Status: {{ StudentForm.status }}
+      </p>
+      
+      <p>
+        <button (click)="updateProfile()">Update Profile</button>
+      </p>
+      
+    
+      
+</body>

@@ -1,0 +1,33 @@
+<!-- <a [routerLink] = "['/teacher']">teacher</a>
+<a [routerLink] = "['/student']">student</a>
+<router-outlet></router-outlet> -->
+<body class="margin">
+        <br>
+        <label>
+            Full Name:
+            <input type="text" placeholder="Full Name" [formControl]='name'>
+          </label>
+          
+          <label>
+              Password:
+              <input type="password"  placeholder="Password" [formControl]='password'>
+          </label>
+          
+          <label>
+                Re-Type : 
+                <input type="password" placeholder="Password" [formControl]='ReType'>
+        </label>
+        
+        <button (click)="Submit()">Submit</button> 
+        <br>
+        <button (click)="Update()">Update</button> 
+        <p>
+            Value: {{ name.value }}
+            Value: {{ password.value }}
+            Value: {{ ReType.value }}
+            
+        </p>
+        <br>
+        {{dialogInput}}
+        
+</body>

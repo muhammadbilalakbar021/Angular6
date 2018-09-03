@@ -1,0 +1,10 @@
+
+<nav style="margin-left: 25%">
+    <a (click)="toggleProfile('Teacher')">Faculty Login</a>
+    <a (click)="toggleProfile('Student')">Student Login</a>
+  </nav>
+  
+  <app-teacher *ngIf="showTeacherProfile"></app-teacher>
+  <br>
+  
+  <app-student *ngIf="showStudentProfile"></app-student>

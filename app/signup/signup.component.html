@@ -1,0 +1,13 @@
+<!-- <a [routerLink] = "['/teacher']">teacher</a>
+<a [routerLink] = "['/student']">student</a>
+<router-outlet></router-outlet> -->
+
+<nav style="margin-left: 25%">
+  <a (click)="toggleProfile('Teacher')">Teacher Account</a>
+  <a (click)="toggleProfile('Student')">Student Account</a>
+</nav>
+
+<app-teacher *ngIf="showTeacherProfile"></app-teacher>
+<br>
+
+<app-student *ngIf="showStudentProfile"></app-student>

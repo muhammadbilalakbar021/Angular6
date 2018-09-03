@@ -1,0 +1,43 @@
+<body style="color:white">
+    <div class="container color-dark" >
+        <div class="col">
+          <p>
+            Add Categories to Form
+          </p>
+    </div> 
+      
+        <div class="col" style="color:white">
+          <p>
+            Your Work List ({{itemCount}})
+          </p>
+        </div>
+      </div>
+      <div class="container color-light" [@goals-anim]="goals.length">
+        <div class="col">
+          <p class="sm">
+             Use the form below to Add a new Category to Your Database
+          </p>
+            <form>
+              <input type="text" class="txt" name="item" placeholder="Enter Category" [(ngModel)]="goalText"><br>
+              
+                    <!-- <input type="radio" value="" name="yes">No
+                    <input type="radio" value="yes" name="yes" >{{bilal()}}Yes -->
+                    Status
+                    <div *ngFor="let value of status" >
+                        <input type="radio" name="status" value="{{value}}" (change)="radioChangeHandler($event)">
+                        <i>{{value}}</i>
+                    </div>
+              
+              <input type="submit" class="btn" [value]="btnText" (click)="addItems()">
+            </form>
+        </div>
+        <div class="col">
+          <p class="life-container" *ngFor="let goal of goals; let i=index" (click)="removeItem(i)">
+            
+            {{goal}}
+          </p>
+        </div>
+      </div>
+      
+      
+</body>

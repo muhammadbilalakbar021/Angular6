@@ -1,0 +1,21 @@
+<body class="margin">
+  <br>
+  <label>
+      E-mail:
+      <input type="text" placeholder="Institute E-mail" [formControl]='mail'>
+  </label>
+
+  <label>
+      Password:
+      <input type="text" placeholder="Password" [formControl]='Password'>
+  </label>
+        
+  <button (click)="Submit()">Submit</button> 
+   <br>
+   <button (click)="Update()">Update</button> 
+     <p>
+            Value: {{ mail.value }}
+            Value: {{ Password.value }}           
+      </p>
+</body>
+</body>

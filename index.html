@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Comsats</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+
+<script>
+    System.config({
+        paths: {
+            '/*': '/app/*',
+            'ngx-parallax/*': '/node_modules/ngx-parallax/*' // <--- add this
+        },
+        packages: {
+            app: {
+                format: 'register',
+                defaultExtension: 'js'
+            },
+            '/node_modules/ngx-parallax': { // <--- and this
+                format: 'register',
+                defaultExtension: js
+            }
+        }
+    });
+    
+    System.import('/app/boot')
+        .then(null, console.error.bind(console));
+</script> 
+
+</html>
